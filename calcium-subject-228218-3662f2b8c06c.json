@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "calcium-subject-228218",
+  "private_key_id": "3662f2b8c06ccd37afa8e0d2b7472ff46f469ab5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/BVZu5NFhSb/v\nzM8UMBMLLEXlfURW30Jz3EEGuE1Mb8ZA5dHSAyOSi0iQqAlNRCUollItlvoLDl2c\nTk/hSNcAe5vne1TuoOj7rifY4Fgei2sfgnKsKvgetTf50US9Tg2lb+/KTcSbb4d0\nSNDPG1Y3XR2/l118bH8QgaliIkno2ZEcFuYL72FhYedwrnttgEW60w3u8OiHEu0I\nsSnQmSKzJymyv0KZElrWzgrf1nla28dpFWA2hE/sfJgKFfPUGS9lJC0VsjlfOeai\nMcOfSLqiU+i+ZlmRu9afzu8sdxVW7wfA9xGSCifGccXfCr/cr359D/XtwZR6uSVE\nCeMvu25lAgMBAAECggEAI+0HUUJwPa2u71UT8j5LapvIRo3Ne1AwkZVQVoj1osVX\n4k9G68pi15YiDvDHlRRWr8A70u609rzcLsBMxjhalXDqBLp9oga54tHhlSi2cgIz\nIsE4O3i2YyIelbm9xaPHLcD0dpYzPq+WaHCkcvs3dyCobmbzsmm+aRaVyorb3zKu\n3XENkQqsVhHEklrqvIMoE80FZwpSIpyVUvTUiwXxYI2BW9iDo+/KgGCEW+uqtgAe\nW4oGg0e5l7BiKap//MsHXN2FCTS2Y4jvX26bZAYG/mrJmi7E6RRXSZCmCx00FTOX\nTrwLXVmRYzecL6PxZg52Rq/gc/aTBYqhAIn9dguEmQKBgQDkrUU4xTCvJP2dknyD\nktKJrftOXl8lWhQzLqfPzGaRqTUy/Y7JjXDppY3WeE2dnpaqHX+lb08Dq2UNSpZW\nxXY5PKoVyoXTNc3bnb1bdXQSeu5G/f6IYBbBvAyp7+OPD6TtI4x2T2JppoPzWZ8V\nCLZrmTBLLGY9w8TYo7htT9i/uQKBgQDV2ECHYrTCs3toRExlP7Ay94v4vfDjbVL3\n8P55PcFf7JhW/5ajb+L1/pP1RtkX7rOxwKedxGTo0mq2IR35B2iPQfgAy6oFhsTm\n9YWXl9U/mJccEbM8DRR/TztsC1JHNWXqBzmEAYIBNFHMaOQVQEdOQbkLDSTsQg9t\nuWRy8KxCDQKBgAShWYh3va+eMSByqeDEJU0yX6dLk+Oeuk/6/tzfR6hlY7VfmveL\nzKB+gKu6DeBGKMjTBhWkdlYdr1MgkoC5SNaJ2uvMCP+o1D1BKWdjrnD9WjvHwtKi\nF3Peyeba+6GW8ID4ukxe+SAohf10cBst7Puqw2aSRJO1lhPI5OAZwMrJAoGADsFP\nIohTBKQxva4Iv2u3kqy2AcHJX0fp06XTSTZTo3TFxir4j+pmdKbOOrxaumYEDB3I\n8v/cHpx2NH7wfIBgXJImtJdY8eyspWsHfsBBPJQgyRUHkvssEOS8quXVFYi/sXgy\nJcOc3sxnYH1UT4sR4Hp0dCjCBXNBcUa7gZrNp/kCgYEAlR1YYeHLlH5K+ihxZEF1\nMiE77p2su6RKxWqoEHGlLHsh2XZ0rIMhqfwY2YG/Tr5THzT8ze3W5hNnh9w1qQ01\nozN2woA13M2WCx6zR/KqUOeCeJNGCIt6c/3G6sRw1ezSc/iyc4tkBQS+x59Al0yi\n+CXNVvLFwCUawYYmWxYJEbQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-r8yei@calcium-subject-228218.iam.gserviceaccount.com",
+  "client_id": "110344219635299358152",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-r8yei%40calcium-subject-228218.iam.gserviceaccount.com"
+}
