@@ -6,20 +6,13 @@ admin.initializeApp({
     databaseURL: 'https://calcium-subject-228218.firebaseio.com/'
 });
 
-var marketSpace = []
 var datab = admin.database();
-datab.ref("Market/").once("value").then((result) => {
-    marketSpace = result.val()
-}).then(function(val){
-    app.listen(port, function(){
-        console.log("Marketplace app listening on port",port)
-    })
-}).catch((error)=>{
-    throw new Error("Unable to access database please try again later \n",error);
-})
 
 const app = express();
 const port = 3000
+app.listen(port, function(){
+    console.log("Marketplace app listening on port",port)
+})
 
 function Product(name, inventoryCount, price){
     this.name = name;
@@ -29,7 +22,12 @@ function Product(name, inventoryCount, price){
 
 
 function findProduct(name){
-    return marketSpace[name]
+    let result = undefined
+    datab.ref("Market/"+name).once("value", function(data){
+        result= data.val()
+    }).then((data)=>{
+        return result
+    })
 }
 
 function updateItem(product, name = product.name){
@@ -43,16 +41,18 @@ function updateItem(product, name = product.name){
 }
 
 function addToMarket(name, inventoryCount, price){
-    if(findProduct(name) != undefined)
+    findProduct(name).then((product) =>{
+    if(product != undefined)
         return false;
     let product = new Product(name, inventoryCount, price)
-    if(updateItem(product))
-        marketSpace[product.name] = product
-    else
-        return false
-    
+    updateItem().then((result)=>{
+        if(updateItem(product))
+            return true
+        else
+            return false
+        })
+     })
 
-    return true;
 }
 
 app.post('/add',function(req,res){ //add a product to the marketspace
@@ -73,7 +73,11 @@ app.post('/add',function(req,res){ //add a product to the marketspace
 })
 
 app.post('/list', function(req,res){  //list all products
-    res.status(200).send(marketSpace)
+    let market = findProduct("")
+    if(market  !== undefined)
+        res.status(200).send(market)
+    else
+        res.status(400).send("Couldn't fetch market")
 })
 
 app.post('/find', function(req,res){ //find a specific product
@@ -100,12 +104,11 @@ app.post('/delete', function(req,res){ //deletes a specific product
         return
     }
     if(updateItem(null, item.name))
-        marketSpace[item.name] = undefined;
+    res.send("item succesfully removed")
     else{
         res.status(400).send("Something went wrong")
         return
     }
-    res.send("item succesfully removed")
 })
 
 app.post('/orderItem', function(req,res){ // orders an item
@@ -125,6 +128,25 @@ app.post('/orderItem', function(req,res){ // orders an item
     product.inventoryCount--;
     updateItem(product)
     res.status(200).send("Item purchased succefully")
+})
+
+app.post('/changeInventory',function(req,res){ //update the number of items in inventory
+    if(!req.query.name){
+        res.status(400).send("Name not in query")
+        return
+    }
+    if(!req.query.inventoryCount){
+        res.status(400).send("No new inventory count specified")
+        return
+    }
+    let product = findProduct(req.query.name)
+    if(product == undefined){
+        res.status(400).send("Product not found")
+        return
+    }
+    product.inventoryCount = req.query.inventoryCount
+    updateItem(product)
+    res.status(200).send("Item inventory changed succefully")
 })
 
 
